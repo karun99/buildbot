@@ -1,0 +1,14 @@
+{
+  "name": "buildbot-freebuff-worker",
+  "version": "1.0.0",
+  "description": "Freebuff CLI wrapper for BuildBot code generation",
+  "main": "freebuff.js",
+  "scripts": {
+    "start": "node freebuff.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "uuid": "^10.0.0"
+  }
+}

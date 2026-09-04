@@ -1,0 +1,32 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/out",
+  "installCommand": "cd api/python && pip install -r requirements.txt && cd ../node && npm install",
+  "routes": [
+    {
+      "src": "/api/python/(.*)",
+      "dest": "/api/python/main.py"
+    },
+    {
+      "src": "/api/node/(.*)",
+      "dest": "/api/node/freebuff.js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "functions": {
+    "api/python/main.py": {
+      "runtime": "@vercel/python@3",
+      "includeFiles": "api/python/**"
+    },
+    "api/node/freebuff.js": {
+      "runtime": "@vercel/node@3",
+      "includeFiles": "api/node/**"
+    }
+  }
+}
