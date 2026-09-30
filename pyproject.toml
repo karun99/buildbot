@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "buildbot"
+version = "1.0.0"
+description = "From research paper to SRS to checklist to working code — a student AI coding assistant with a paper-to-code pipeline."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Karun Karun", email = "saikarun085@gmail.com" }]
+keywords = ["srs", "code-generation", "llm", "education", "fastapi", "nextjs"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: FastAPI",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.0",
+    "httpx>=0.27.0",
+    "python-multipart>=0.0.9",
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2.0"]
+
+[project.urls]
+Homepage = "http://you-ai-project.netlify.app"
+Repository = "https://github.com/karun99/buildbot"
+Issues = "https://github.com/karun99/buildbot/issues"
+
+[tool.setuptools]
+py-modules = ["llm_client", "collabuild_utils", "agent_reach_utils"]
+package-dir = { "" = "api/python" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["api/python"]
