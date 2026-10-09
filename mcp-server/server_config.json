@@ -1,0 +1,38 @@
+{
+  "app": {
+    "name": "buildbot",
+    "version": "unknown",
+    "description": "Student AI Coding Assistant \u2013 From Research Paper \u2192 SRS \u2192 Checklist \u2192 Working Code"
+  },
+  "stack": "python",
+  "routes": [
+    {
+      "method": "get",
+      "path": "/api/health"
+    },
+    {
+      "method": "post",
+      "path": "/api/generate-plan"
+    },
+    {
+      "method": "post",
+      "path": "/api/research"
+    },
+    {
+      "method": "post",
+      "path": "/api/generate-code"
+    },
+    {
+      "method": "post",
+      "path": "/api/generate-all"
+    }
+  ],
+  "pages": [],
+  "base_url": "http://localhost:8000",
+  "module": null,
+  "scripts": {},
+  "cli_entry": null,
+  "server": "mcp-server/mcp_server.py",
+  "runner": "python",
+  "runner_cmd": "python3"
+}
